@@ -1,0 +1,7 @@
+2024-07-25 19:13:26 ERROR WeatherDistributor:27 - Sth went wrong Connection has been closed BEFORE response, while sending request body
+2024-07-25 19:21:58 ERROR WeatherDistributor:27 - Sth went wrong Connection has been closed BEFORE response, while sending request body
+2024-07-25 19:24:25 ERROR WeatherDistributor:28 - Sth went wrong 500 Internal Server Error from POST http://localhost:8081/call-back
+2024-07-25 19:28:16 ERROR WeatherDistributor:27 - Sth went wrong Connection has been closed BEFORE response, while sending request body
+2024-07-25 19:59:43 ERROR WeatherDistributor:28 - Error occurred: Connection has been closed BEFORE response, while sending request body
+2024-07-25 20:00:45 ERROR WeatherDistributor:28 - Error occurred: Connection has been closed BEFORE response, while sending request body
+2024-07-26 14:20:05 ERROR WeatherDistributor:28 - Error occurred: Failed to resolve 'htppfsdfsfsdf' [A(1), AAAA(28)] after 4 queries 

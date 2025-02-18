@@ -1,0 +1,29 @@
+server:
+  port: 8087
+  ssl:
+    enabled: false
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+  mail:
+    host: smtp.yandex.ru
+    port: 465
+    protocol: smtps
+    username: rabotazaebal@yandex.ru
+    password: ezaylkrozgacnfus
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      ttl: 10
+      hash:
+        key: "app_user:"
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5427/postgresDB
+    username: userok
+    password: password
+
+service:
+  activation:
+    uri: http://localhost:8087/user/activation?id=

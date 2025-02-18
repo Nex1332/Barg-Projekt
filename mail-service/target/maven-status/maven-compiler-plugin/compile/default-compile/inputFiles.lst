@@ -1,0 +1,11 @@
+C:\Penis\projects\SunnySideBot\mail-service\src\main\java\de\semenchenko\configuration\ReactiveKafkaConfiguration.java
+C:\Penis\projects\SunnySideBot\mail-service\src\main\java\de\semenchenko\configuration\ReactiveRedisConfiguration.java
+C:\Penis\projects\SunnySideBot\mail-service\src\main\java\de\semenchenko\contoller\ActivationController.java
+C:\Penis\projects\SunnySideBot\mail-service\src\main\java\de\semenchenko\contoller\MailController.java
+C:\Penis\projects\SunnySideBot\mail-service\src\main\java\de\semenchenko\MailApplication.java
+C:\Penis\projects\SunnySideBot\mail-service\src\main\java\de\semenchenko\service\impl\MailSenderServiceImpl.java
+C:\Penis\projects\SunnySideBot\mail-service\src\main\java\de\semenchenko\service\impl\ProducerServiceImpl.java
+C:\Penis\projects\SunnySideBot\mail-service\src\main\java\de\semenchenko\service\impl\UserActivationServiceImpl.java
+C:\Penis\projects\SunnySideBot\mail-service\src\main\java\de\semenchenko\service\MailSenderService.java
+C:\Penis\projects\SunnySideBot\mail-service\src\main\java\de\semenchenko\service\ProducerService.java
+C:\Penis\projects\SunnySideBot\mail-service\src\main\java\de\semenchenko\service\UserActivationService.java

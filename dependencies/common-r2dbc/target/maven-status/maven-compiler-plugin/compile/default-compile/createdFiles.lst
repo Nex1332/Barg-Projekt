@@ -1,0 +1,5 @@
+de\semenchenko\dao\ReactiveAppUserDAO.class
+de\semenchenko\entity\AppUser$AppUserBuilder.class
+de\semenchenko\entity\enums\BotState.class
+de\semenchenko\entity\enums\UserState.class
+de\semenchenko\entity\AppUser.class
