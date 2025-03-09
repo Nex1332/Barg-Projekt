@@ -1,0 +1,6 @@
+de\semenchenko\service\dto\WeatherDTO.class
+de\semenchenko\config\AnalyseConfiguration.class
+de\semenchenko\controller\SubscribeController.class
+de\semenchenko\service\MainService.class
+de\semenchenko\AnalyseApplication.class
+de\semenchenko\service\dto\SubscriberDTO.class

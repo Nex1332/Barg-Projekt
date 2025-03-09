@@ -11,12 +11,7 @@ import reactor.core.publisher.Mono;
 public class MainServiceImpl implements MainService {
 
     @Override
-    public Mono<Void> checkWeather(Flux<WeatherDTO> weather) {
-        return new Mono<Void>() {
-            @Override
-            public void subscribe(CoreSubscriber<? super Void> coreSubscriber) {
+    public Mono<Void> save(Flux<WeatherDTO> weather) {
 
-            }
-        };
     }
 }

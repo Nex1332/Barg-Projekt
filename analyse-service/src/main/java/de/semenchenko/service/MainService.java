@@ -5,5 +5,5 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface MainService {
-    Mono<Void> checkWeather(Flux<WeatherDTO> weather);
+    Mono<Void> save(Flux<WeatherDTO> weather);
 }

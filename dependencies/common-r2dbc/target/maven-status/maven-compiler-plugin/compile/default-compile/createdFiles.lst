@@ -1,5 +1,14 @@
-de\semenchenko\dao\ReactiveAppUserDAO.class
 de\semenchenko\entity\AppUser$AppUserBuilder.class
-de\semenchenko\entity\enums\BotState.class
+de\semenchenko\entity\City$CityBuilder.class
 de\semenchenko\entity\enums\UserState.class
+de\semenchenko\repository\ReactiveWeatherRepository.class
+de\semenchenko\entity\Place$PlaceBuilder.class
+de\semenchenko\entity\Weather$WeatherBuilder.class
+de\semenchenko\repository\ReactiveAppUserRepository.class
 de\semenchenko\entity\AppUser.class
+de\semenchenko\entity\Place.class
+de\semenchenko\repository\ReactivePlaceRepository.class
+de\semenchenko\entity\enums\BotState.class
+de\semenchenko\entity\City.class
+de\semenchenko\repository\ReactiveCityRepository.class
+de\semenchenko\entity\Weather.class

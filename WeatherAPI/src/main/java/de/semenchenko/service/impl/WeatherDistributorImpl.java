@@ -8,6 +8,8 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import java.net.URI;
+
 @Log4j
 @Service
 public class WeatherDistributorImpl implements WeatherDistributor {
@@ -23,8 +25,8 @@ public class WeatherDistributorImpl implements WeatherDistributor {
     public void startPush(String callBackUrl) {
         webClientBuilder.build()
                 .post()
-                .uri(callBackUrl)
-                .contentType(MediaType.APPLICATION_NDJSON) // Для потоковой передачи JSON
+                .uri(URI.create(callBackUrl))
+                .contentType(MediaType.APPLICATION_NDJSON)
                 .body(weatherProducer.weatherFlux(), Weather.class)
                 .retrieve()
                 .bodyToMono(Void.class)

@@ -1,0 +1,25 @@
+server:
+  port: 8082
+  ssl:
+    enabled: false
+
+spring:
+  kafka:
+    bootstrap-servers: 192.168.178.72:29092
+  data:
+    redis:
+      host: 192.168.178.72
+      port: 6379
+      ttl: 10
+      hash:
+        key: app_user
+  r2dbc:
+    url: r2dbc:postgresql://192.168.178.72:5427/postgresDB
+    username: userok
+    password: password
+
+service:
+  weather:
+    uri: http://localhost:8080/weather-API
+  activation:
+    uri: http://localhost:8087/user/activation?id=

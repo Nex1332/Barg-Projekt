@@ -1,10 +1,10 @@
 package de.semenchenko.service.impl;
 
 import de.semenchenko.MailParams;
-import de.semenchenko.dao.ReactiveAppUserDAO;
 import de.semenchenko.entity.AppUser;
 import de.semenchenko.entity.enums.BotState;
 import de.semenchenko.entity.enums.UserState;
+import de.semenchenko.repository.ReactiveAppUserRepository;
 import de.semenchenko.service.AppUserService;
 import de.semenchenko.service.WeatherService;
 import lombok.extern.log4j.Log4j;
@@ -30,12 +30,12 @@ public class AppUserServiceImpl implements AppUserService {
     private Long TTL;
     @Value("${spring.data.redis.hash.key}")
     private String HASH_KEY;
-    private final ReactiveAppUserDAO reactiveAppUserDAO;
+    private final ReactiveAppUserRepository reactiveAppUserDAO;
     private final ReactiveRedisOperations<String, AppUser> appUserOps;
     private final WeatherService weatherService;
     private final WebClient activationWebClient;
 
-    public AppUserServiceImpl(ReactiveAppUserDAO reactiveAppUserDAO, WeatherService weatherService,
+    public AppUserServiceImpl(ReactiveAppUserRepository reactiveAppUserDAO, WeatherService weatherService,
                               ReactiveRedisOperations<String, AppUser> appUserOps,
                               @Qualifier("activationWebClient") WebClient activationWebClient) {
         this.reactiveAppUserDAO = reactiveAppUserDAO;
@@ -48,7 +48,7 @@ public class AppUserServiceImpl implements AppUserService {
     public Mono<AppUser> findCachedAppUser(Update update) {
         var telegramUser = update.getMessage().getFrom();
         var id = telegramUser.getId();
-
+//                                          Ибо не строка, возможно
         return appUserOps.opsForValue().get(HASH_KEY + id)
                 .switchIfEmpty(
                         findOrSaveAppUser(telegramUser, update)
