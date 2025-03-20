@@ -15,14 +15,15 @@ import java.time.LocalDate;
 @Table("weather_data.weather")
 public class Weather {
     @Id
+    @Column("weather_id")
     private Long weatherId;
+    @Column("temperature")
     private double temp;
     private double feels_like;
     private double temp_min;
     private double temp_max;
+    @Column("weather_conditions")
     private String weatherCondition;
     private LocalDate date;
-
-    @Column
-    private Long cityId;
+    private String city;
 }

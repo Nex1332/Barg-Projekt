@@ -8,6 +8,7 @@ import java.time.LocalDate;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherDTO {
+    private String city;
     private double temp;
     private double feels_like;
     private double temp_min;

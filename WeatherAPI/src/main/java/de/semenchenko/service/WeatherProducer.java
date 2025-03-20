@@ -6,5 +6,7 @@ import reactor.core.publisher.Flux;
 public interface WeatherProducer {
     Flux<Weather> weatherFlux();
 
-    Weather randomWeather();
+    Weather getCurrentWeather();
+
+    Weather generateWeather();
 }

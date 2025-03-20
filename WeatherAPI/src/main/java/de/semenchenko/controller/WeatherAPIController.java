@@ -29,6 +29,6 @@ public class WeatherAPIController {
 
     @GetMapping("/get-random-weather")
     public Mono<Weather> getRandomWeather(@RequestParam("city") String city) {
-        return Mono.just(weatherProducer.randomWeather());
+        return Mono.just(weatherProducer.getCurrentWeather());
     }
 }

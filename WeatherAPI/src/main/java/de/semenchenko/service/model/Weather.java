@@ -16,5 +16,5 @@ public class Weather {
     private double temp_max;
     private String weatherCondition;
     private LocalDate date;
-    private Cities cityName;
+    private String city;
 }

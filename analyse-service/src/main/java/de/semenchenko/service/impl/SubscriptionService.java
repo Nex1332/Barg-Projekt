@@ -21,7 +21,7 @@ public class SubscriptionService {
         subscriberDTO.setCallBackUrl("http://localhost:8089/analyse-service/processWeather");
 
         weatherAPIWebClient.post()
-                .uri("/subscribe") // Тут уже относительный путь, базовый задан в конфиге
+                .uri("/subscribe")
                 .bodyValue(subscriberDTO)
                 .retrieve()
                 .bodyToMono(Void.class)

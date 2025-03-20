@@ -1,0 +1,6 @@
+de\semenchenko\configuration\ReactiveKafkaConfiguration.class
+de\semenchenko\service\ConsumerService.class
+de\semenchenko\WeatherApplication.class
+de\semenchenko\service\ProducerService.class
+de\semenchenko\service\MainService.class
+de\semenchenko\configuration\WeatherServiceConfiguration.class

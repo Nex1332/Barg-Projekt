@@ -13,13 +13,12 @@ import org.springframework.data.relational.core.mapping.Table;
 @Table("weather_data.places")
 public class Place {
     @Id
+    @Column("place_id")
     private Long placeId;
+    @Column("place_name")
     private String placeName;
     private String road;
     private String suburb;
     private String city;
     private String country;
-
-    @Column("city_Id")
-    private Long cityId;
 }
