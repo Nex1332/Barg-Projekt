@@ -40,8 +40,18 @@
         <dependency>
             <groupId>com.github.Nex1332</groupId>
             <artifactId>common-r2dbc</artifactId>
-            <version>1.0.2-SNAPSHOT</version>
+            <version>0.0.4-SNAPSHOT</version>
         </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/Nex1332/Barg-Projekt</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>

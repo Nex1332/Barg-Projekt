@@ -13,3 +13,5 @@ spring:
 service:
   weather:
     uri: http://localhost:8080/weather-API
+  overpass:
+    uri: https://overpass-api.de/api/interpreter

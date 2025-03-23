@@ -23,6 +23,16 @@
         <telegrambot.starter.version>6.1.0</telegrambot.starter.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/Nex1332/Barg-Projekt</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -64,7 +74,13 @@
         <dependency>
             <groupId>com.github.Nex1332</groupId>
             <artifactId>common-dto</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.Nex1332</groupId>
+            <artifactId>common-r2dbc</artifactId>
+            <version>0.0.4-SNAPSHOT</version>
         </dependency>
 
         <dependency>

@@ -8,6 +8,8 @@ spring:
     password: maks09172239
 
 service:
+  callBack:
+    uri: http://localhost:8089/analyse-service/processWeather
   weather:
     uri: http://localhost:8080/weather-API
   activation:

@@ -1,5 +1,6 @@
 package de.semenchenko.controller;
 
+import de.semenchenko.service.AnalyseService;
 import de.semenchenko.service.WeatherService;
 import de.semenchenko.service.dto.WeatherDTO;
 import org.springframework.http.MediaType;
@@ -13,15 +14,15 @@ import reactor.core.publisher.Mono;
 @RestController
 @RequestMapping("/analyse-service")
 public class SubscribeController {
-    private final WeatherService weatherService;
+    private final AnalyseService analyseService;
 
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
-    public SubscribeController(WeatherService weatherService) {
-        this.weatherService = weatherService;
+    public SubscribeController(AnalyseService analyseService) {
+        this.analyseService = analyseService;
     }
 
     @PostMapping(value = "/processWeather",consumes = MediaType.APPLICATION_NDJSON_VALUE)
     public Mono<Void> processWeather(@RequestBody Flux<WeatherDTO> weatherFlux) {
-        return weatherService.validate(weatherFlux);
+        return analyseService.analyse(weatherFlux);
     }
 }

@@ -1,5 +1,6 @@
 package de.semenchenko.service.impl;
 
+import de.semenchenko.dto.SubscriberDTO;
 import de.semenchenko.service.WeatherDistributor;
 import de.semenchenko.service.WeatherProducer;
 import de.semenchenko.service.model.Weather;
@@ -7,6 +8,7 @@ import lombok.extern.log4j.Log4j;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
 import java.net.URI;
 
@@ -22,15 +24,17 @@ public class WeatherDistributorImpl implements WeatherDistributor {
     }
 
     @Override
-    public void startPush(String callBackUrl) {
-        webClientBuilder.build()
+    public Mono<Void> startPush(SubscriberDTO subscriberDTO) {
+       webClientBuilder.build()
                 .post()
-                .uri(URI.create(callBackUrl))
+                .uri(URI.create(subscriberDTO.getCallBackUrl()))
                 .contentType(MediaType.APPLICATION_NDJSON)
-                .body(weatherProducer.weatherFlux(), Weather.class)
+                .body(weatherProducer.generateWeatherFlux(subscriberDTO.getCityFlux()), Weather.class)
                 .retrieve()
                 .bodyToMono(Void.class)
                 .doOnError(throwable -> log.error("Error occurred: " + throwable.getMessage()))
                 .subscribe();
+
+       return Mono.empty();
     }
 }

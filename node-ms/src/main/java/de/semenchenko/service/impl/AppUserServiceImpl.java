@@ -2,9 +2,11 @@ package de.semenchenko.service.impl;
 
 import de.semenchenko.MailParams;
 import de.semenchenko.entity.AppUser;
+import de.semenchenko.entity.City;
 import de.semenchenko.entity.enums.BotState;
 import de.semenchenko.entity.enums.UserState;
 import de.semenchenko.repository.ReactiveAppUserRepository;
+import de.semenchenko.repository.ReactiveCityRepository;
 import de.semenchenko.service.AppUserService;
 import de.semenchenko.service.WeatherService;
 import lombok.extern.log4j.Log4j;
@@ -127,6 +129,7 @@ public class AppUserServiceImpl implements AppUserService {
                         appUser.setCity(city);
                         appUser.setUserState(UserState.REGISTERED.toString());
                         appUser.setBotState(BotState.BASE_STATE.toString());
+
                         return updateAppUser(appUser)
                                 .then(Mono.just("""
                                         The city is saved!;)

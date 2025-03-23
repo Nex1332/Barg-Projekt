@@ -1,8 +1,8 @@
 package de.semenchenko.controller;
 
 import de.semenchenko.dto.SubscriberDTO;
+import de.semenchenko.service.WeatherDistributor;
 import de.semenchenko.service.model.Weather;
-import de.semenchenko.service.SubscriberService;
 import de.semenchenko.service.impl.WeatherProducerImpl;
 import lombok.extern.log4j.Log4j;
 import org.springframework.http.HttpStatus;
@@ -13,22 +13,22 @@ import reactor.core.publisher.Mono;
 @RestController
 @RequestMapping("/weather-API")
 public class WeatherAPIController {
-    private final SubscriberService subscriberService;
+    private final WeatherDistributor weatherDistributor;
     private final WeatherProducerImpl weatherProducer;
 
-    public WeatherAPIController(SubscriberService subscriberService, WeatherProducerImpl weatherProducer) {
-        this.subscriberService = subscriberService;
+    public WeatherAPIController(WeatherDistributor weatherDistributor, WeatherProducerImpl weatherProducer) {
+        this.weatherDistributor = weatherDistributor;
         this.weatherProducer = weatherProducer;
     }
 
-    @PostMapping("/subscribe")
+    @PostMapping("/getWeatherForTwoNextWeeks")
     @ResponseStatus(HttpStatus.OK)
     public Mono<Void> subscribe(@RequestBody SubscriberDTO subscriberDTO) {
-        return subscriberService.subscribe(subscriberDTO);
+        return weatherDistributor.startPush(subscriberDTO);
     }
 
     @GetMapping("/get-random-weather")
     public Mono<Weather> getRandomWeather(@RequestParam("city") String city) {
-        return Mono.just(weatherProducer.getCurrentWeather());
+        return Mono.just(weatherProducer.getCurrentWeather(city));
     }
 }
